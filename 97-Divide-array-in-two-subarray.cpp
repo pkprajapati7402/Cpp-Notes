@@ -51,6 +51,19 @@ class sol{
             for(int i = 0; i < n; i++){
                 sum += arr[i];
             }
+            // Without prefix array.
+            /*
+            int prefix = 0;
+            for(int i = 0; i < n - 1; i++){
+                prefix += arr[i];
+                int rem = sum - prefix;
+                if(rem == prefix){
+                    return 1;
+                }
+            }
+            */
+           
+           // with prefix array.
             int pref[n];
             pref[0] = arr[0];
             for(int i = 1; i < n; i++){
@@ -61,6 +74,7 @@ class sol{
                     return 1;
                 }
             }
+
             return 0;
         }
 };
